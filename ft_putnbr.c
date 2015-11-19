@@ -1,11 +1,10 @@
 #include "libft.h"
 
-char	*ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
 	int		i;
 	int		j;
 	int		tmp;
-	char	*str;
 
 	i = -1;
 	if (n == -2147483648)
