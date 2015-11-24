@@ -1,12 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/11/24 10:23:50 by jfortin           #+#    #+#             */
+/*   Updated: 2015/11/24 11:41:46 by jfortin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_putnbr(int n)
+static int	ft_nbrlen(int nbr)
+{
+	int	i;
+
+	i = 0;
+	if (nbr < 0)
+		return (-1);
+	while (nbr >= 10)
+	{
+		nbr = nbr / 10;
+		i++;
+	}
+	return (i);
+}
+
+void		ft_putnbr(int n)
 {
 	int		i;
 	int		j;
 	int		tmp;
 
-	i = -1;
 	if (n == -2147483648)
 		ft_putstr("-2147483648");
 	else if (n < 0)
@@ -15,12 +41,11 @@ void	ft_putnbr(int n)
 		n = -n;
 	}
 	tmp = n;
-	while (i++, tmp >= 10)
-		tmp = tmp / 10;
+	i = ft_nbrlen(n);
 	while (i >= 0 && n != -2147483648)
 	{
-		tmp = n;
 		j = 0;
+		tmp = n;
 		while (j++ < i)
 			tmp = tmp / 10;
 		ft_putchar(tmp % 10 + '0');

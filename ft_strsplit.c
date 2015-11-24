@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/11/24 10:25:56 by jfortin           #+#    #+#             */
+/*   Updated: 2015/11/24 10:40:19 by jfortin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_cntw(char const *s, char c)
@@ -31,7 +43,7 @@ static char	*ft_strndup(const char *s, size_t n)
 	return (str);
 }
 
-char **ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	j;
