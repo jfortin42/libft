@@ -6,7 +6,7 @@
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:25:33 by jfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 10:25:34 by jfortin          ###   ########.fr       */
+/*   Updated: 2015/11/24 14:55:00 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
 		dest[i] = src[i];
 		i++;
 	}
-	while (dest[i])
+	while (i < n)
 	{
 		dest[i] = '\0';
 		i++;

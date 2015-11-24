@@ -6,7 +6,7 @@
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:24:28 by jfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 10:24:29 by jfortin          ###   ########.fr       */
+/*   Updated: 2015/11/24 15:52:56 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s + i);
 		i++;
 	}
-	if (!c && !s[0])
-		return ((char *)s);
+	if (!c && !s[i])
+		return ((char *)s + i);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:23:50 by jfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 11:41:46 by jfortin          ###   ########.fr       */
+/*   Updated: 2015/11/24 12:00:16 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static int	ft_nbrlen(int nbr)
 
 void		ft_putnbr(int n)
 {
-	int		i;
-	int		j;
-	int		tmp;
+	int	i;
+	int	j;
+	int	tmp;
 
 	if (n == -2147483648)
 		ft_putstr("-2147483648");
