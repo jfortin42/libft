@@ -1,2 +1,2 @@
 # libft
-so many useful and basics functions
+so many usefull and basics functions
