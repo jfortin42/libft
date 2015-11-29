@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_sort_integer_table.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 10:22:48 by jfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 22:20:50 by jfortin          ###   ########.fr       */
+/*   Created: 2015/11/27 18:07:49 by jfortin           #+#    #+#             */
+/*   Updated: 2015/11/27 18:36:37 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+int	*ft_sort_integer_table(int *tab, size_t size)
 {
-	if (del && alst)
+	size_t	i;
+
+	i = 0;
+	while (i < size)
 	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = NULL;
+		if (tab[i] > tab[i + 1])
+		{
+			ft_swap(&tab[i], &tab[i + 1]);
+			i = -1;
+		}
+		i++;
 	}
+	return (tab);
 }

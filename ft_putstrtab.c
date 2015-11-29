@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_putstrtab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 10:22:48 by jfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 22:20:50 by jfortin          ###   ########.fr       */
+/*   Created: 2015/11/26 15:05:25 by jfortin           #+#    #+#             */
+/*   Updated: 2015/11/26 15:15:30 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_putstrtab(char **tab, size_t size)
 {
-	if (del && alst)
+	size_t	i;
+
+	i = 0;
+	while (i < size)
 	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = NULL;
+		ft_putstr(*tab);
+		i++;
 	}
 }
