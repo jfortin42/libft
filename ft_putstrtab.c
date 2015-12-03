@@ -19,7 +19,7 @@ void	ft_putstrtab(char **tab, size_t size)
 	i = 0;
 	while (i < size)
 	{
-		ft_putstr(*tab);
+		ft_putstr(tab[i]);
 		i++;
 	}
 }
