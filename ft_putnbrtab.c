@@ -19,7 +19,7 @@ void	ft_putnbrtab(int **tab, size_t size)
 	i = 0;
 	while (i < size)
 	{
-		ft_putnbr(*tab[i]);
+		ft_putnbr(tab[i]);
 		i++;
 	}
 }
