@@ -22,10 +22,9 @@ void		ft_putnbr(int n)
 	i = 1;
 	signe = 1;
 	if (n < 0)
-	{
 		signe = -1;
+	if (n < 0)
 		ft_putchar('-');
-	}
 	tmp = n;
 	while (tmp < -9 || tmp > 9)
 	{
