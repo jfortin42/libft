@@ -6,7 +6,7 @@
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:28:16 by jfortin           #+#    #+#             */
-/*   Updated: 2015/11/27 18:38:14 by jfortin          ###   ########.fr       */
+/*   Updated: 2015/12/10 18:49:02 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void				ft_swap(int *a, int *b);
 void				ft_putnbrtab(int **tab, size_t size);
 void				ft_putstrtab(char **tab, size_t size);
 int					*ft_sort_integer_table(int *tab, size_t size);
+char				*ft_strndup(const char *s, size_t n);
 
 #endif

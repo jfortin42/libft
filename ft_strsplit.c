@@ -6,7 +6,7 @@
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:25:56 by jfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 17:08:36 by jfortin          ###   ########.fr       */
+/*   Updated: 2015/12/10 18:53:28 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_cntw(char const *s, char c)
 	return (w);
 }
 
-static char	*ft_strndup(const char *s, size_t n)
+char	*ft_strndup(const char *s, size_t n)
 {
 	char *str;
 
