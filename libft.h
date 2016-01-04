@@ -24,6 +24,12 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_lst
+{
+	void			*data;
+	struct s_lst	*next;
+}					t_lst;
+
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
@@ -86,7 +92,8 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_swap(int *a, int *b);
 void				ft_putnbrtab(int **tab, size_t size);
 void				ft_putstrtab(char **tab, size_t size);
-int					*ft_sort_integer_table(int *tab, size_t size);
+int					*ft_sort_int_tab(int *tab, size_t size);
 char				*ft_strndup(const char *s, size_t n);
+t_lst				*ft_create_elem(void *data);
 
 #endif
