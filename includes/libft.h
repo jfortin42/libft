@@ -6,7 +6,7 @@
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:28:16 by jfortin           #+#    #+#             */
-/*   Updated: 2015/12/10 18:49:02 by jfortin          ###   ########.fr       */
+/*   Updated: 2016/02/01 17:44:06 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ void				ft_putstrtab(char **tab, size_t size);
 int					*ft_sort_int_tab(int *tab, size_t size);
 char				*ft_strndup(const char *s, size_t n);
 t_lst				*ft_create_elem(void *data);
+char				*ft_strnjoin(const char *s1, const char *s2, size_t len);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:25:03 by jfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 10:37:44 by jfortin          ###   ########.fr       */
+/*   Updated: 2016/02/03 14:29:54 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char			*str;
 	unsigned int	i;
 	unsigned int	j;
+	unsigned int	len;
 
 	i = 0;
 	j = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = (char *)ft_memalloc(sizeof(char) * len);
 	if (!str)
 		return (NULL);
 	while (s1[i])

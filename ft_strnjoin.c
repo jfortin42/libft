@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 10:24:28 by jfortin           #+#    #+#             */
-/*   Updated: 2016/02/03 15:40:53 by jfortin          ###   ########.fr       */
+/*   Created: 2016/02/01 17:39:02 by jfortin           #+#    #+#             */
+/*   Updated: 2016/02/02 15:58:50 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strnjoin(const char *s1, const char *s2, size_t len)
 {
-	unsigned int	i;
+	char	*str;
+	int		nbr;
+	char	*d;
 
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (s[i])
-	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
-	}
-	if (!c && !s[i])
-		return ((char *)s + i);
-	return (NULL);
+	nbr = ft_strlen(s1) + ++len;
+	str = ft_strnew(nbr);
+	d = str;
+	while (*s1)
+		*str++ = *s1++;
+	while (*s2 && --len > 0)
+		*str++ = *s2++;
+	return (str - (str - d));
 }
