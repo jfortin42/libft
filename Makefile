@@ -6,7 +6,7 @@
 #    By: jfortin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 10:29:00 by jfortin           #+#    #+#              #
-#    Updated: 2016/02/01 17:38:28 by jfortin          ###   ########.fr        #
+#    Updated: 2016/02/08 16:46:35 by jfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,8 @@ SRC = ft_atoi.c \
 		ft_strtrim.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		ft_strnjoin.c
+		ft_strnjoin.c \
+		get_next_line.c
 
 OBJ = $(SRC:.c=.o)
 
