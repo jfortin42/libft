@@ -18,8 +18,7 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return ("-2147483648");
-	s = (char *)malloc(sizeof(char) * 2);
-	if (!s)
+	if (!(s = (char *)malloc(sizeof(char) * 2)))
 		return (NULL);
 	if (n < 0)
 	{
