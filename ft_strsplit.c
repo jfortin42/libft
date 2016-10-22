@@ -12,59 +12,43 @@
 
 #include "libft.h"
 
-static int	ft_cntw(char const *s, char c)
+static unsigned int	ft_cntw(char const *s, char c)
 {
-	unsigned int	i;
-	int				w;
+	unsigned int w;
 
-	i = 0;
 	w = 0;
-	while (s[i])
+	while (s && *s)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
-			w++;
-		while (s[i] && s[i] != c)
-			i++;
+		while (*s == c)
+			++s;
+		if (*s)
+			++w;
+		while (*s && *s != c)
+			++s;
 	}
 	return (w);
 }
 
-char		*ft_strndup(const char *s, size_t n)
+char				**ft_strsplit(char const *s, char c)
 {
-	char *str;
+	char			**tab;
+	char const		*tmp;
+	unsigned int	i;
 
-	if (!(str = (char *)malloc(sizeof(char) * (n + 1))))
+	i = ft_cntw(s, c);
+	if (!(tab = (char **)malloc(sizeof(char *) * (i + 1))))
 		return (NULL);
-	str = ft_strncpy(str, s, n);
-	str[n] = '\0';
-	return (str);
-}
-
-char		**ft_strsplit(char const *s, char c)
-{
-	int		i;
-	int		j;
-	int		k;
-	char	**tab;
-
+	tab[i] = NULL;
 	i = 0;
-	k = 0;
-	if (ft_cntw(s,c) == 0)
-		return (NULL);
-	if (!(tab = (char **)malloc(sizeof(char *) * (ft_cntw(s, c) + 1))))
-		return (NULL);
-	while (s[i])
+	while (s && *s)
 	{
-		while (s[i] == c)
-			i++;
-		j = i;
-		while (s[i] && s[i] != c)
-			i++;
-		if (i > j)
-			tab[k++] = ft_strndup(s + j, i - j);
+		while (*s == c)
+			++s;
+		tmp = s;
+		while (*s && *s != c)
+			++s;
+		if (tmp < s)
+			tab[i++] = ft_strsub(tmp, 0, s - tmp);
 	}
-	tab[k] = NULL;
 	return (tab);
 }
