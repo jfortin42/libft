@@ -59,7 +59,7 @@ int				get_next_line(int const fd, char **line)
 	ret = 0;
 	while (((char*)list->content)[ret] && ((char*)list->content)[ret] != '\n')
 		++ret;
-	*line = ft_strndup(list->content, ret);
+	*line = ft_strsub(list->content, 0, ret);
 	if (((char*)list->content)[ret] == '\n')
 		++ret;
 	copy = list->content;

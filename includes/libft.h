@@ -94,7 +94,6 @@ void				ft_swap(int *a, int *b);
 void				ft_putnbrtab(int **tab, size_t size);
 void				ft_putstrtab(char **tab, size_t size);
 int					*ft_sort_int_tab(int *tab, size_t size);
-char				*ft_strndup(const char *s, size_t n);
 t_lst				*ft_create_elem(void *data);
 char				*ft_strnjoin(const char *s1, const char *s2, size_t len);
 int					get_next_line(int const fd, char **line);
