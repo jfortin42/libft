@@ -77,16 +77,21 @@ SRC = ft_atoi.c \
 
 OBJ = $(SRC:.c=.o)
 
+opti:
+		@$(MAKE) all -j
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-				@ar rc $(NAME) $(OBJ)
-				@echo "$(NAME) created"
-				@ranlib $(NAME)
-				@echo "$(NAME) indexed"
+		@ar rc $(NAME) $(OBJ)
+		@echo "$(NAME) created"
+		@ranlib $(NAME)
+		@echo "$(NAME) indexed"
+
+$(OBJ): includes/libft.h
 
 %.o: %.c
-				@gcc $(FLAG) -I includes -c $< -o $@
+		@gcc $(FLAG) -I includes -c $< -o $@
 
 clean:
 		@rm -f $(OBJ)
@@ -96,6 +101,7 @@ fclean: clean
 		@rm -f $(NAME)
 		@echo "$(NAME) deleted"
 
-re : fclean all
+re : fclean
+		@$(MAKE) opti
 
-.PHONY: all, clean, fclean, re
+.PHONY: clean
