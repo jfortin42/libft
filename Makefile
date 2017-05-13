@@ -83,6 +83,7 @@ opti:
 all: $(NAME)
 
 $(NAME): $(OBJ)
+		@echo "\033[2K \033[A"
 		@ar rc $(NAME) $(OBJ)
 		@echo "$(NAME) created"
 		@ranlib $(NAME)
@@ -91,6 +92,7 @@ $(NAME): $(OBJ)
 $(OBJ): includes/libft.h
 
 %.o: %.c
+		@echo "\033[2K Compilation of $< \033[A"
 		@gcc $(FLAG) -I includes -c $< -o $@
 
 clean:
