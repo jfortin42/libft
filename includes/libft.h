@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfortin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:28:16 by jfortin           #+#    #+#             */
-/*   Updated: 2016/02/08 16:44:18 by jfortin          ###   ########.fr       */
+/*   Updated: 2017/08/11 14:33:15 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <fcntl.h>
 
 typedef struct		s_list
 {
@@ -96,6 +97,8 @@ void				ft_putstrtab(char **tab, size_t size);
 int					*ft_sort_int_tab(int *tab, size_t size);
 t_lst				*ft_create_elem(void *data);
 char				*ft_strnjoin(const char *s1, const char *s2, size_t len);
+char				*ft_strjoinfree(char *s1, char *s2, const char control);
+char				*ft_loadfile(const char *path_file);
 int					get_next_line(int const fd, char **line);
 
 #endif

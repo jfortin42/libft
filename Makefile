@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jfortin <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 10:29:00 by jfortin           #+#    #+#              #
-#    Updated: 2016/02/08 16:46:35 by jfortin          ###   ########.fr        #
+#    Updated: 2017/08/11 16:30:18 by jfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,8 @@ SRC = ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		ft_strnjoin.c \
+		ft_strjoinfree.c \
+		ft_loadfile.c \
 		get_next_line.c
 
 OBJ = $(SRC:.c=.o)
