@@ -6,11 +6,15 @@
 #    By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 10:29:00 by jfortin           #+#    #+#              #
-#    Updated: 2017/08/11 16:30:18 by jfortin          ###   ########.fr        #
+#    Updated: 2017/09/05 18:48:56 by jfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAG = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -MMD
+
+ifeq ($(DEBUG),yes)
+	CFLAGS += -g
+endif
 
 NAME = libft.a
 
@@ -78,9 +82,13 @@ SRC = ft_atoi.c \
 		get_next_line.c
 
 OBJ = $(SRC:.c=.o)
+DPD = $(SRC:.c=.d)
 
 opti:
 		@$(MAKE) all -j
+
+debug:
+		@$(MAKE) opti DEBUG=yes
 
 all: $(NAME)
 
@@ -91,14 +99,13 @@ $(NAME): $(OBJ)
 		@ranlib $(NAME)
 		@echo "$(NAME) indexed"
 
-$(OBJ): includes/libft.h
-
 %.o: %.c
 		@echo "\033[2K Compilation of $< \033[A"
-		@gcc $(FLAG) -I includes -c $< -o $@
+		@gcc $(CFLAGS) -I includes -c $< -o $@
 
 clean:
 		@rm -f $(OBJ)
+		@rm -f $(DPD)
 		@echo "OBJ deleted"
 
 fclean: clean
@@ -109,3 +116,5 @@ re : fclean
 		@$(MAKE) opti
 
 .PHONY: clean
+
+-include $(DPD)
