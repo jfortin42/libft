@@ -6,14 +6,14 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:28:16 by jfortin           #+#    #+#             */
-/*   Updated: 2017/08/11 14:33:15 by jfortin          ###   ########.fr       */
+/*   Updated: 2017/10/24 15:40:08 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define BUFF_SIZE 2
+# define BUFF_SIZE 1024
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
@@ -98,7 +98,9 @@ int					*ft_sort_int_tab(int *tab, size_t size);
 t_lst				*ft_create_elem(void *data);
 char				*ft_strnjoin(const char *s1, const char *s2, size_t len);
 char				*ft_strjoinfree(char *s1, char *s2, const char control);
+int					ft_readfile(char **out, int const fd);
 char				*ft_loadfile(const char *path_file);
 int					get_next_line(int const fd, char **line);
+void				ft_error(const char *const str, const int ret_value);
 
 #endif

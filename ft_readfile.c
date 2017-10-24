@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_loadfile.c                                      :+:      :+:    :+:   */
+/*   ft_readfile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/09 17:55:25 by jfortin           #+#    #+#             */
-/*   Updated: 2017/10/03 13:15:52 by jfortin          ###   ########.fr       */
+/*   Created: 2017/10/03 13:14:27 by jfortin           #+#    #+#             */
+/*   Updated: 2017/10/24 15:52:05 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_loadfile(const char *path_file)
+int	ft_readfile(char **out, int const fd)
 {
-	int	fd;
-	char *out;
+	char	buf[BUFF_SIZE + 1];
+	size_t	ret;
+	size_t	count;
 
-	if ((fd = (open(path_file, O_RDONLY))) < 3)
-		return (NULL);
-	ft_readfile(&out, fd);
-	close(fd);
-	return (out);
+	count = 0;
+	if (out == NULL || read(fd, buf, 0) < 0)
+		return (-1);
+	*out = (char *)ft_memalloc(1);
+	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
+	{
+		buf[ret] = '\0';
+		*out = ft_strjoinfree(*out, buf, 'L');
+		count += ret;
+	}
+	return(count);
 }

@@ -6,7 +6,7 @@
 #    By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 10:29:00 by jfortin           #+#    #+#              #
-#    Updated: 2017/09/05 18:48:56 by jfortin          ###   ########.fr        #
+#    Updated: 2017/10/03 13:16:16 by jfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ NAME = libft.a
 
 SRC = ft_atoi.c \
 		ft_bzero.c \
+		ft_error.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -78,6 +79,7 @@ SRC = ft_atoi.c \
 		ft_toupper.c \
 		ft_strnjoin.c \
 		ft_strjoinfree.c \
+		ft_readfile.c \
 		ft_loadfile.c \
 		get_next_line.c
 
@@ -88,7 +90,7 @@ opti:
 		@$(MAKE) all -j
 
 debug:
-		@$(MAKE) opti DEBUG=yes
+		@$(MAKE) DEBUG=yes
 
 all: $(NAME)
 
