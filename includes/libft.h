@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:28:16 by jfortin           #+#    #+#             */
-/*   Updated: 2017/10/24 15:40:08 by jfortin          ###   ########.fr       */
+/*   Updated: 2017/10/25 11:07:20 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ int					ft_readfile(char **out, int const fd);
 char				*ft_loadfile(const char *path_file);
 int					get_next_line(int const fd, char **line);
 void				ft_error(const char *const str, const int ret_value);
+float				ft_atof(const char *nptr);
 
 #endif

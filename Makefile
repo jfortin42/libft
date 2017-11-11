@@ -6,7 +6,7 @@
 #    By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 10:29:00 by jfortin           #+#    #+#              #
-#    Updated: 2017/10/03 13:16:16 by jfortin          ###   ########.fr        #
+#    Updated: 2017/10/25 11:07:48 by jfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,8 @@ SRC = ft_atoi.c \
 		ft_strjoinfree.c \
 		ft_readfile.c \
 		ft_loadfile.c \
-		get_next_line.c
+		get_next_line.c \
+		ft_atof.c
 
 OBJ = $(SRC:.c=.o)
 DPD = $(SRC:.c=.d)
