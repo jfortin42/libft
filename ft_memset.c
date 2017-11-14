@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:23:32 by jfortin           #+#    #+#             */
-/*   Updated: 2017/10/24 12:22:49 by jfortin          ###   ########.fr       */
+/*   Updated: 2017/11/14 16:33:20 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static void	*ft_memset4(void *s, int c, size_t n)
 	{
 		value <<= 8;
 		value += (unsigned char)c;
-
 	}
 	while (n)
 	{
@@ -64,7 +63,6 @@ static void	*ft_memset2(void *s, int c, size_t n)
 	{
 		value <<= 8;
 		value += (unsigned char)c;
-
 	}
 	while (n)
 	{

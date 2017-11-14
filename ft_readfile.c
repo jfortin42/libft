@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/03 13:14:27 by jfortin           #+#    #+#             */
-/*   Updated: 2017/10/24 15:52:05 by jfortin          ###   ########.fr       */
+/*   Updated: 2017/11/14 16:32:41 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int	ft_readfile(char **out, int const fd)
 		*out = ft_strjoinfree(*out, buf, 'L');
 		count += ret;
 	}
-	return(count);
+	return (count);
 }
