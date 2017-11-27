@@ -6,14 +6,14 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:28:16 by jfortin           #+#    #+#             */
-/*   Updated: 2017/10/25 11:07:20 by jfortin          ###   ########.fr       */
+/*   Updated: 2017/11/24 17:09:06 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define BUFF_SIZE 1024
+# define BUFF_SIZE 2048
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
