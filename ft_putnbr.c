@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:23:50 by jfortin           #+#    #+#             */
-/*   Updated: 2017/05/21 17:04:03 by jfortin          ###   ########.fr       */
+/*   Updated: 2017/11/29 17:08:47 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_putnbr(int nb)
 		power *= 10;
 	while (power)
 	{
-		ft_putchar((tmp = nb / power) + '0');
-		nb -= tmp * power;
+		ft_putchar(nb / power + '0');
+		nb -= (nb / power) * power;
 		power /= 10;
 	}
 }
