@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_readfile.c                                      :+:      :+:    :+:   */
+/*   ft_prot_malloc.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/03 13:14:27 by jfortin           #+#    #+#             */
-/*   Updated: 2018/03/16 18:50:32 by jfortin          ###   ########.fr       */
+/*   Created: 2018/03/15 20:40:24 by jfortin           #+#    #+#             */
+/*   Updated: 2018/03/30 18:10:58 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_readfile(char **out, int const fd)
+void	*ft_prot_malloc(size_t size)
 {
-	char	buf[BUFF_SIZE + 1];
-	size_t	ret;
-	size_t	count;
+	void	*out;
 
-	count = 0;
-	if (out == NULL || ft_read(fd, buf, 0) < 0)
-		return (-1);
-	if (!(*out = (char *)ft_memalloc(1)))
-		return (-1);
-	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
+	if ((out = malloc(size)) == NULL)
 	{
-		buf[ret] = '\0';
-		*out = ft_strjoinfree(*out, buf, 'L');
-		count += ret;
+		ft_putendl_fd("error malloc", 2);
+		perror(NULL);
+		exit(1);
 	}
-	return (count);
+	return (out);
+}
+
+void	*ft_prot_realloc(void *ptr, size_t size)
+{
+	void	*out;
+
+	if ((out = realloc(ptr, size)) == NULL)
+	{
+		ft_putendl_fd("error realloc", 2);
+		perror(NULL);
+		free(ptr);
+		exit(1);
+	}
+	return (out);
 }

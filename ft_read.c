@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_readfile.c                                      :+:      :+:    :+:   */
+/*   ft_read.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/03 13:14:27 by jfortin           #+#    #+#             */
-/*   Updated: 2018/03/16 18:50:32 by jfortin          ###   ########.fr       */
+/*   Created: 2018/03/12 19:15:38 by jfortin           #+#    #+#             */
+/*   Updated: 2018/03/12 21:44:32 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_readfile(char **out, int const fd)
+int	ft_read(int fd, void *buf, size_t nbyte)
 {
-	char	buf[BUFF_SIZE + 1];
-	size_t	ret;
-	size_t	count;
+	ssize_t	ret;
 
-	count = 0;
-	if (out == NULL || ft_read(fd, buf, 0) < 0)
-		return (-1);
-	if (!(*out = (char *)ft_memalloc(1)))
-		return (-1);
-	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
+	if ((ret = read(fd, buf, nbyte)) == -1)
 	{
-		buf[ret] = '\0';
-		*out = ft_strjoinfree(*out, buf, 'L');
-		count += ret;
+		ft_putstr_fd("error read fd: ", 2);
+		ft_putnbr_fd(fd, 2);
+		ft_putchar('\n');
+		perror(NULL);
 	}
-	return (count);
+	return(ret);
 }

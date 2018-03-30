@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:28:16 by jfortin           #+#    #+#             */
-/*   Updated: 2017/11/24 17:09:06 by jfortin          ###   ########.fr       */
+/*   Updated: 2018/03/18 17:14:13 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,13 @@ char				*ft_strnjoin(const char *s1, const char *s2, size_t len);
 char				*ft_strjoinfree(char *s1, char *s2, const char control);
 int					ft_readfile(char **out, int const fd);
 char				*ft_loadfile(const char *path_file);
+void				ft_unloadfile();
 int					get_next_line(int const fd, char **line);
 void				ft_error(const char *const str, const int ret_value);
 float				ft_atof(const char *nptr);
+int					ft_open(const char *path, int oflag);
+int					ft_read(int fd, void *buf, size_t nbyte);
+void				*ft_prot_malloc(size_t size);
+void				*ft_prot_realloc(void *ptr, size_t size);
 
 #endif
