@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 19:02:17 by jfortin           #+#    #+#             */
-/*   Updated: 2018/03/16 18:03:41 by jfortin          ###   ########.fr       */
+/*   Updated: 2018/04/01 03:24:19 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	ft_open(const char *path, int oflag)
 		ft_putendl_fd(path, 2);
 		perror(NULL);
 	}
-	return fd;
+	return (fd);
 }

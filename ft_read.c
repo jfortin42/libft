@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 19:15:38 by jfortin           #+#    #+#             */
-/*   Updated: 2018/03/12 21:44:32 by jfortin          ###   ########.fr       */
+/*   Updated: 2018/04/01 03:24:41 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_read(int fd, void *buf, size_t nbyte)
 		ft_putchar('\n');
 		perror(NULL);
 	}
-	return(ret);
+	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:28:16 by jfortin           #+#    #+#             */
-/*   Updated: 2018/03/18 17:14:13 by jfortin          ###   ########.fr       */
+/*   Updated: 2018/04/03 17:19:16 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ typedef struct		s_lst
 	void			*data;
 	struct s_lst	*next;
 }					t_lst;
+
+typedef struct		s_file
+{
+	char			*data;
+	size_t			size;
+}					t_file;
 
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -99,8 +105,8 @@ t_lst				*ft_create_elem(void *data);
 char				*ft_strnjoin(const char *s1, const char *s2, size_t len);
 char				*ft_strjoinfree(char *s1, char *s2, const char control);
 int					ft_readfile(char **out, int const fd);
-char				*ft_loadfile(const char *path_file);
-void				ft_unloadfile();
+t_file				*ft_loadfile(const char *path_file);
+void				*ft_unloadfile(t_file *file);
 int					get_next_line(int const fd, char **line);
 void				ft_error(const char *const str, const int ret_value);
 float				ft_atof(const char *nptr);
@@ -108,5 +114,6 @@ int					ft_open(const char *path, int oflag);
 int					ft_read(int fd, void *buf, size_t nbyte);
 void				*ft_prot_malloc(size_t size);
 void				*ft_prot_realloc(void *ptr, size_t size);
+int					ft_ret_error(char *str, int ret);
 
 #endif

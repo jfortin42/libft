@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 17:55:25 by jfortin           #+#    #+#             */
-/*   Updated: 2018/03/30 18:10:44 by jfortin          ###   ########.fr       */
+/*   Updated: 2018/04/04 21:53:47 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 #include <sys/stat.h>
 #include <sys/mman.h>
 
-static char		*file;
-static size_t	size;
-
-void		ft_unloadfile()
+void		*ft_unloadfile(t_file *file)
 {
-	if (munmap(file, size) == -1)
+	if (file && file->data && munmap(file->data, file->size) == -1)
 	{
 		perror("error munmap\n");
 		exit(1);
 	}
+	file->size = 0;
+	file->data = NULL;
+	free(file);
+	return (NULL);
 }
 
 static void	error(const char *message, const char *path_file)
@@ -34,10 +35,11 @@ static void	error(const char *message, const char *path_file)
 	perror(NULL);
 }
 
-char		*ft_loadfile(const char *path_file)
+t_file		*ft_loadfile(const char *path_file)
 {
 	int			fd;
-	struct stat	st;;
+	struct stat	st;
+	t_file		*file;
 
 	if ((fd = ft_open(path_file, O_RDONLY)) == -1)
 		return (NULL);
@@ -47,14 +49,17 @@ char		*ft_loadfile(const char *path_file)
 		close(fd);
 		return (NULL);
 	}
-	size = st.st_size + 1;
-	file = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0);
+	file = (t_file *)ft_prot_malloc(sizeof(t_file));
+	file->size = st.st_size + 1;
+	file->data = mmap(NULL, file->size, PROT_READ | PROT_WRITE, MAP_PRIVATE
+	, fd, 0);
 	close(fd);
-	if (file == MAP_FAILED)
+	if (file->data == MAP_FAILED)
 	{
 		error("error mmap of ", path_file);
+		free(file);
 		return (NULL);
 	}
-	file[size - 1] = '\0';
+	file->data[file->size - 1] = '\0';
 	return (file);
 }

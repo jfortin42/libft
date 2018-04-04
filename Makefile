@@ -6,14 +6,14 @@
 #    By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 10:29:00 by jfortin           #+#    #+#              #
-#    Updated: 2018/03/30 18:15:42 by jfortin          ###   ########.fr        #
+#    Updated: 2018/04/04 16:50:46 by jfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS = -Wall -Wextra -Werror -MMD
 
 ifeq ($(DEBUG),yes)
-	CFLAGS += -g -fsanitize=address
+	CFLAGS += -g #-fsanitize=address
 endif
 
 NAME = libft.a
@@ -85,7 +85,8 @@ SRC = ft_atoi.c \
 		ft_atof.c \
 		ft_open.c \
 		ft_read.c \
-		ft_prot_malloc.c
+		ft_prot_malloc.c \
+		ft_ret_error.c
 
 OBJ = $(SRC:.c=.o)
 DPD = $(SRC:.c=.d)
