@@ -6,7 +6,7 @@
 /*   By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:28:16 by jfortin           #+#    #+#             */
-/*   Updated: 2018/04/03 17:19:16 by jfortin          ###   ########.fr       */
+/*   Updated: 2018/06/26 18:53:05 by jfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 # define BUFF_SIZE 2048
+# define RND "/dev/random"
+# define URND "/dev/urandom"
+# define DNLL "/dev/null"
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
@@ -115,5 +118,6 @@ int					ft_read(int fd, void *buf, size_t nbyte);
 void				*ft_prot_malloc(size_t size);
 void				*ft_prot_realloc(void *ptr, size_t size);
 int					ft_ret_error(char *str, int ret);
+int					ft_isblank(char c);
 
 #endif
