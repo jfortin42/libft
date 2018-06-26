@@ -6,7 +6,7 @@
 #    By: jfortin <jfortin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 10:29:00 by jfortin           #+#    #+#              #
-#    Updated: 2018/06/25 15:26:14 by jfortin          ###   ########.fr        #
+#    Updated: 2018/06/26 19:41:32 by jfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ NAME = libft.a
 SRC = ft_atoi.c \
 		ft_bzero.c \
 		ft_error.c \
+		ft_reterror.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
